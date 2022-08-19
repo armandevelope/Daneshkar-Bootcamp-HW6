@@ -1,0 +1,303 @@
+// ====== Some varible =====
+// ======Colors ======
+$clr--white: #fff;
+$clr--blue: #597188;
+$clr--blue-400: #012b55;
+
+// ======CSS resets ======
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: bjpg;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// ======MixINS ======
+
+@mixin flex($flexDirection) {
+  display: flex;
+  flex-direction: $flexDirection;
+}
+
+// fonts
+@font-face {
+  font-family: bjpg;
+  src: url(https://use.typekit.net/af/065c26/00000000000000007735a6c8/30/l?subset_id=2&fvd=i5&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/065c26/00000000000000007735a6c8/30/d?subset_id=2&fvd=i5&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/065c26/00000000000000007735a6c8/30/a?subset_id=2&fvd=i5&v=3)
+      format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: bjpg;
+  src: url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/l?subset_id=2&fvd=n4&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/d?subset_id=2&fvd=n4&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/54d47a/000000000000000000017750/27/a?subset_id=2&fvd=n4&v=3)
+      format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: bjpg;
+  src: url(https://use.typekit.net/af/ac24c0/00000000000000007735a6c3/30/l?subset_id=2&fvd=n5&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/ac24c0/00000000000000007735a6c3/30/d?subset_id=2&fvd=n5&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/ac24c0/00000000000000007735a6c3/30/a?subset_id=2&fvd=n5&v=3)
+      format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: bjpg;
+  src: url(https://use.typekit.net/af/f7ef3a/00000000000000007735a6cd/30/l?subset_id=2&fvd=n6&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/f7ef3a/00000000000000007735a6cd/30/d?subset_id=2&fvd=n6&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/f7ef3a/00000000000000007735a6cd/30/a?subset_id=2&fvd=n6&v=3)
+      format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+
+@font-face {
+  font-family: bjpg;
+  src: url(https://use.typekit.net/af/3e2979/00000000000000007735a6b9/30/l?subset_id=2&fvd=n7&v=3)
+      format("woff2"),
+    url(https://use.typekit.net/af/3e2979/00000000000000007735a6b9/30/d?subset_id=2&fvd=n7&v=3)
+      format("woff"),
+    url(https://use.typekit.net/af/3e2979/00000000000000007735a6b9/30/a?subset_id=2&fvd=n7&v=3)
+      format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: auto;
+}
+// ======Helper class ======
+.container {
+  max-width: 168rem;
+  margin: 0 auto;
+  height: auto;
+}
+
+.wrapper {
+  @include flex();
+  margin: 0 auto;
+}
+
+.text--clr {
+  color: #011427;
+  font-weight: bold;
+}
+
+// ======SideBar ======
+.sidebar {
+  width: 40rem;
+  background-color: $clr--white;
+  padding: 5.8rem 4rem;
+  padding-left: 6rem;
+
+  &__title {
+    font-size: 2.6rem;
+    color: #012b55;
+  }
+
+  &__items {
+    @include flex(column);
+    gap: 1.75rem;
+    margin-top: 6rem;
+
+    a {
+      font-size: 1.6rem;
+      color: #41576d;
+      transition: 0.5s;
+      &:hover {
+        color: $clr--blue-400;
+      }
+    }
+  }
+  &__social--icons {
+    margin-top: 2rem;
+    @include flex();
+    gap: 0.5rem;
+  }
+}
+
+.icon {
+  height: 30px;
+  width: 30px;
+  background-color: rgba(1, 43, 85, 0.1);
+  border-radius: 15px;
+}
+
+svg {
+  fill: $clr--blue-400;
+  height: 22px;
+  width: 22px;
+}
+
+.main-container {
+  @include flex(column);
+  width: 100%;
+}
+
+// ======Headers ======
+
+.header {
+  background-color: #f7f8f9;
+  text-align: center;
+  @include flex(column);
+  min-height: auto;
+  padding: 15rem 1.5rem 15rem 1.5rem;
+  margin-bottom: 0.5rem;
+
+  &__title {
+    max-width: 92rem;
+    padding: 2.2rem 1.2rem;
+    margin: 0 auto;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: $clr--blue-400;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+
+    .img__res {
+      width: 100%;
+      height: 100%;
+    }
+
+    .img__wrapper {
+      position: relative;
+    }
+  }
+
+  &__detail {
+    color: $clr--blue;
+    font-size: 1.8rem;
+  }
+}
+
+.sidebar__social--icons--bottom {
+  align-self: center;
+  text-align: center;
+  padding: 5.8rem;
+
+  p {
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    color: $clr--blue;
+  }
+}
+
+// ======Tablets ======
+@media screen and (max-width: 950px) {
+  html {
+    font-size: 58.5%;
+  }
+
+  .header {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    &__gallery {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+
+  .sidebar {
+    padding-left: 3.5rem;
+  }
+}
+
+// ======Hover animation ======
+.inner__text {
+  background-color: rgba(39, 68, 104, 0.935);
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  @include flex(column);
+  align-items: center;
+  justify-content: center;
+  transition: 0.45s ease;
+
+  .date {
+    color: $clr--white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.4rem;
+  }
+  .text {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: $clr--white;
+  }
+}
+
+.inner__text:hover {
+  opacity: 1;
+}
+
+// ======Mobile Devices ======
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+  .main-container {
+    max-width: 100%;
+  }
+
+  .sidebar {
+    padding: 1.2rem;
+    width: 100%;
+
+    &__lists {
+      display: none;
+      pointer-events: none;
+    }
+  }
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar__social--icons {
+    display: none;
+    pointer-events: none;
+  }
+}
